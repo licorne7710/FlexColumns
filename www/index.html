@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <title>FlexColumns</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <style>
+        /* following two viewport lines are equivalent to meta viewport statement above, needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }  @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }           @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+        body{ margin:0px; }
+
+        .fc > * {
+            margin:10px;
+            padding:20px;
+            background-color:lightgray;
+            border-radius: 10px;
+        }
+
+        /* initialize flexbox container and flexbox items */
+        .fc {
+            display:flex;
+            flex-flow: column wrap;
+           width:100vw;
+          height:100vh;
+
+        }
+
+        /* header and footer should be full width */
+        .fc header,
+        .fc footer {
+            margin:0px;
+          flex: 1 1; min-height:100vh;
+           width:15vw; border-radius:10px;box-sizing:border-box}
+
+main,aside,section {flex: 1 1 ;max-width:calc(100vw - 30vw-20px); box-sizing:border-box;}
+    </style>
+
+    <!-- Uncomment the following scripts if you convert your "Standard HTML5" project into a "Cordova" project. -->
+    <!-- <script src="cordova.js"></script> -->          <!-- phantom library, needed for Cordova api calls, added during build -->
+    <!-- <script src="js/app.js"></script> -->           <!-- recommended location of your JavaScript code relative to other JS files -->
+    <!-- <script src="xdk/init-dev.js"></script> -->     <!-- normalizes device and document ready events, see README for details -->
+</head>
+
+<body>
+    <div class="fc">
+        <header>Swanns Way - Overture</header>
+        <aside>For a long time I used to go to bed early. Sometimes, when I had put out my candle, my eyes would close so quickly that I had not even time to say &quot;I'm going to sleep.&quot;</aside>
+        <main>And half an hour later the thought that it was time to go to sleep would awaken me; I would try to put away the book which, I imagined, was still in my hands, and to blow out the light; I had been thinking all the time, while I was asleep, of what I had just been reading, but my thoughts had run into a channel of their own, until I myself seemed actually to have become the subject of my book: a church, a quartet, the rivalry between François I and Charles V. </main>
+        <section>This impression would persist for some moments after I was awake; it did not disturb my mind, but it lay like scales upon my eyes and prevented them from registering the fact that the candle was no longer burning. </section>
+        <footer>by Marcel Proust</footer>
+    </div>
+
+
+</body>
+</html>
